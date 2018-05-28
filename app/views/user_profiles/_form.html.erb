@@ -1,0 +1,26 @@
+<div class="form-wrapper user_profile">
+	<div class="photo_section">
+	  	<div class="photo_display_sec">
+	  		<span id="target" class="image_div">
+	  			<%= (!current_user.user_profile.blank? && !current_user.user_profile.profile_photo.blank?) ? image_tag(current_user.user_profile.profile_photo_url(:thumb)) : image_tag("Silhouette.png")%>
+	  		</span>
+	  	</div>
+	  	<div id="photo_size_check" class="selectPhoto">                                    
+	   		<%= form.file_field :profile_photo,:id=>"pictureInput", :class => "file_field_new file_field_class", :style =>"display:none;"  %>
+	      	<div class= "dropzone_class" id="dropzone" style="cursor:pointer;" onclick="attachment_input(this)" ondragover="allowDrop(event)" ondrop="drop(event)">
+	        	<span class="fa fa-upload upload_image" aria-hidden="true" id ="add_attachment_placeholder" ></span>
+	        	<input class="order_number detail_view_user upload_box" type="text" readonly="true" id="add_attachment_placeholder" placeholder="Upload image">
+	      	</div>
+	  	</div>
+  	</div>
+	<div class="page-form">
+		<div class="row"><%= form.text_field :account_number, class: "form-control", placeholder: "Account Number" %></div>
+		<div class="row"><%= form.text_field :name, class: "form-control", placeholder: "Name" %></div>
+		<div class="row"><%= form.select(:sex, ["Male","Female"], :selected => @user_profile.account_type, prompt: "Select Sex") %></div>
+		<div class="row"><%= form.text_area :address, class: "form-control", placeholder: "Address" %></div>
+		<div class="row"><%= form.text_field :phone_number, class: "form-control", placeholder: "Phone Number" %></div>
+		<div class="row"><%= form.select(:account_type, UserProfile::ACCOUNTTYPE, :selected => @user_profile.account_type, prompt: "Select Account Type") %></div>
+		<div class="row"><%= form.submit "Submit", :class=>"btn btn-warning" %></div>
+	</div>
+</div>
+

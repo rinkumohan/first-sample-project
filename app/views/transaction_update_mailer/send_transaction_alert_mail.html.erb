@@ -1,0 +1,14 @@
+<div>Dear <%=@user_profile.name%><div>
+
+<div>This alert was generated to notify you of the recent activity on your account. A payment of Rs.<%=@transaction.last_transaction_amount%> was 
+	<%=(@transaction.transaction_type=='credit') ? "Credited to" : "Debited from"%> your account on <%=@transaction.updated_at%>.
+	
+	If you have not done this transaction please do inform your Bank at the earliest. We would like to provide you with the continued support. You are our valueable customer. 
+</div>
+
+<div>
+	Regards,
+	Bank Manager
+</div>
+
+<div>**This is an automated mail. Please dont respond to this</div>

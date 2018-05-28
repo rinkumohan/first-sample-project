@@ -1,0 +1,91 @@
+<div class="outer_section_card">
+  <div class="inner_section_card">
+    <div class="top_sec">
+      <div class="breadcrumbs" style="background:#6f5b92;color:#FFF;">
+			<span class="fa fa-home"></span> / User / <span class="active">Transaction</span>
+	  </div>
+      <span class="top_img_and_detail_div">
+         <span class="img_div">
+           <%= (!current_user.user_profile.blank? && !current_user.user_profile.profile_photo.blank?) ? image_tag(current_user.user_profile.profile_photo_url(:thumb)) : image_tag("Silhouette.png")%>
+         </span>
+         <span class="detail_div">
+            <span class="name_of_user"><%= @user_profile.name %></span>
+            <span class="acnt_no_of_user"><%= @user_profile.account_number %></span>
+         </span> 
+      </span>
+    </div>
+    <div class="bottom_sec">
+        <span class="personal_detail">
+            <span class="personal_detail_head">
+                Personal Details
+            </span> 
+            <span class="personal_detail_other">
+              <%= UserProfile::ACCOUNTTYPE.rassoc(@user_profile.account_type)[0] %><br>
+              <span class="personal_details_contents">
+              	<span class="details_header_field">Address</span>
+              	<span style="float: left;width: 5%;">:</span>
+              	<span class="details_content_field"><%= @user_profile.address %></span>
+              </span>
+              <span class="personal_details_contents">
+              	<span class="details_header_field">Mobile</span>
+              	<span style="float: left;width: 5%;">:</span>
+              	<span class="details_content_field"><%= @user_profile.phone_number %></span>
+              </span>
+            </span>
+        </span>
+        <span class="transaction_details">
+        	<%= link_to deposite_accounts_new_transaction_path(transaction_type: 'credit') do %>
+	           <span class="transaction_icons_common_cls">
+	            <%=image_tag("deposit_image.png",:class=>"icon_image_common_cls", :style=> "background: #80e0ff;")%>
+	            <br> Cash Deposit
+	           </span>
+	        <%end%>
+	        <%= link_to deposite_accounts_new_transaction_path(transaction_type: 'debit') do %>
+	           <span class="transaction_icons_common_cls">
+	            <%=image_tag("withdraw_icon.png",:class=>"icon_image_common_cls", :style=> "background: #abffab;padding: 10px;")%>
+	            <br> Cash Withdraw
+	           </span>
+	        <%end%>
+	        <%= link_to deposite_accounts_balance_enquiry_path do %>
+	           <span class="transaction_icons_common_cls">
+	            <%=image_tag("enquiry_icon.png",:class=>"icon_image_common_cls", :style=> "background: #f99595;padding: 10px;")%>
+	           <br> Balance Enquiry
+	           </span>
+	        <%end%>
+	        <%= link_to deposite_accounts_transaction_history_path do%>
+	           <span class="transaction_icons_common_cls">
+	            <%=image_tag("passbook.png",:class=>"icon_image_common_cls", :style=> "background: #f0f995;padding: 10px;")%>
+	           <br> Passbook
+	           </span>
+	        <%end%>
+        </span>
+    </div>
+  </div>  
+</div>  
+
+<style>
+  .outer_section_card{float:left;width:100%;}
+  .inner_section_card{float:left;width:100%;background:white;margin-bottom:6%;}
+  .top_sec{float:left;width:100%;background:linear-gradient(0deg, #e6f2fb, #d4d4d4);color:white;}
+  .top_links_sec{float:left;width:100%;border-bottom:1px solid lightgray;padding:20px;color:gray;}
+  .top_img_and_detail_div{float:left;width:100%;background: linear-gradient(0deg, #e6f2fb, #4d89b1);padding-bottom: 2%;}
+  .img_div{float:left;width:29%;margin-left: 6%;margin-top: 2%;}
+  .user_img_style{height: 209px;width: 240px;border: 2px solid lightgray;border-radius: 19px;}
+  .detail_div{width: 65%;float: left;padding-left: 11%;margin-top: 2%;}
+  .name_of_user{font-size:38px;width:100%;float:left;}
+  .acnt_no_of_user{font-size:23px;width:100%;float:left;}
+  .bottom_sec{float:left;width:100%;}
+  .personal_detail{float:left;width:35%;padding: 30px 5px 5px 71px;}
+  .personal_detail_head{width:100%;float:left;font-size:18px;color: silver;}
+  .personal_detail_other{width:100%;float:left;font-size:15px;color: gray;}
+  .transaction_details{float:left;width:65%;padding: 30px 5px 5px 71px;}
+  .transaction_icons_common_cls{float:left;width:20%;margin-left: 3%;margin-top: 2%;text-align:center;}
+  .icon_image_common_cls{height: 100px;width: 100px;border: 2px solid lightgray;border-radius:50%;cursor: pointer;}
+  .personal_details_contents{width: 100%;float: left;}
+  .details_header_field{float: left;width: 20%;}
+  .details_content_field{float: left;width: 75%;}
+  @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait){
+   .transaction_details{padding: 0 !important;}
+   .icon_image_common_cls{height: 80px !important;width: 80px !important;}
+  }
+</style>

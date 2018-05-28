@@ -1,0 +1,27 @@
+<%if !@all_transactions.blank?%>
+	<div class="passbook_class">
+		<div class="home_class_headers">
+			<span>Passbook</span>
+		</div>
+		<div class="appointment_view_header">
+			<span class="header">Sl. No.</span>
+			<span class="header">Account Number</span>
+			<span class="header">Transaction Date</span>
+			<span class="header">Debit/Credit</span>
+			<span class="header">Transaction Amount</span>
+			<span class="header">Available Balance</span>
+		</div>
+		<%@all_transactions.each_with_index do |transaction,index|%>
+			<div class="appointment_view_contents">
+				<span class="content"><%= index+1 %></span>
+				<span class="content"><%=transaction.user.user_profile.account_number %></span>
+				<span class="content"><%=transaction.updated_at.strftime("%v")%></span>
+				<span class="content <%=transaction.transaction_type%>"><%#=transaction.transaction_type.titleize%></span>
+				<span class="content">Rs. <%=transaction.last_transaction_amount%></span>
+				<span class="content">Rs. <%=transaction.available_balance%></span>
+			</div>
+		<%end%>
+	</div>
+<%else%>
+	<div class="noRecords"><span class="fa fa-info-circle"></span> No Albums Found</div>
+<%end%>

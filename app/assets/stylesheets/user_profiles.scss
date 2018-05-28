@@ -1,0 +1,152 @@
+.login_default_style{
+  margin-left: auto;
+  margin-right: auto;
+  top: 45%;
+  position: fixed;
+  margin-top: -9em;
+  margin-left: -15em;
+}
+
+.login_header{
+  text-align: center;
+  font-size: 30px;
+  width:100%;
+  padding-bottom: 25px;
+}
+
+.alternate_login{
+  text-align: center;
+  width:100%;
+  float: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.new_user {
+  float: left;
+  width: 100%;
+}
+
+.login_textbox{
+  width: 100%;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.login_fields{
+  padding-top: 15px;
+}
+
+.login_button{
+  width: 100%;
+}
+
+.album_search{color:#FFF !important;}
+
+.user_profile {
+  width: 100%;
+  margin-left: 0;
+}
+
+.user_profile .photo_display_sec {
+  float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.user_profile .image_div {
+  display: inline-block;
+    width: 240px;
+    height: 240px;
+    border: 1px solid lightgray;
+}
+
+.user_profile .photo_section {
+  float: left;
+    width: 40%;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.user_profile .page-form {
+  width: 60%;
+  padding-left: 15px;
+    padding-right: 30px;
+}
+
+.user_profile .row {
+  margin: 0;
+}
+
+select {
+  padding: .375rem .75rem;
+    border-radius: 2px;
+    border: 1px solid lightgray;
+    width: 100%;
+    margin-bottom: 10px;
+    background: white;
+    color: gray;
+}
+
+.upload_box{
+  cursor:pointer;
+  font-size: 10px;
+  width: 87%;
+  margin-top: 6px;
+  pointer-events: none;
+  border:none !important;
+  background: #f0f0f0;
+  height:44px;
+  margin-left: -10px;
+  padding-top: 0px;
+  padding-left: 23px;
+}
+
+.upload_image{
+  text-align: center;
+  color: #00adef;
+  cursor:pointer;
+  font-size: 25px;float:left;
+  border-radius: 50px;
+  border: 5px solid #6fc8ea;
+  height: 55px;
+  width: 55px;
+  padding-top: 9px;
+  z-index: 100;
+  position: relative;
+  background: white;
+}
+
+#target > img { width: 100%;height: 100%;}
+
+
+
+@media only screen and (min-width: 240px) and (max-width: 767px) and (orientation: portrait)
+{
+  .login_page_main{width: 100%;left: 40%;}
+}
+
+@media only screen and (min-width: 240px) and (max-width: 767px) and (orientation: landscape)
+{
+  .login_page_main{width: 70%;left: 50%;}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait)
+{
+  .login_page_main{width:60%;left: 45%;}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape)
+{
+  .login_page_main{width: 55%;left: 50%;}
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1351px)
+{
+  .login_page_main{width: 35%;left: 50%;}
+}
+
+@media only screen and (min-width: 1352px) and (max-width: 3200px)
+{
+  .login_page_main{width: 35%;left: 50%;}
+}

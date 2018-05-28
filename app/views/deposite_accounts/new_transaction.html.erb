@@ -1,0 +1,5 @@
+<% if params[:transaction_type] == "credit"%>
+	<%= render "credit_form" %>
+<%elsif params[:transaction_type] == "debit"%>
+	<%= render "debit_form" %>
+<%end%>

@@ -1,0 +1,10 @@
+<%= form_with model: @new_transaction, url: deposite_accounts_update_debit_path do |form|%>
+	<div class="form-wrapper">
+		<div class="page-form">
+			<div class="row"><%= form.text_field :last_transaction_amount, class: "form-control", placeholder: "Enter the amount you want to withdraw" %></div>
+			<%= form.hidden_field :transaction_type, :value => "debit"%>
+			<div class="row"><%= form.submit "Submit", :class=>"btn btn-warning" %></div>
+		</div>
+	</div>
+<%end%>
+

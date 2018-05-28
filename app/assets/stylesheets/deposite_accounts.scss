@@ -1,0 +1,84 @@
+.passbook_class{
+  float: left;
+  width: 100%;
+  padding: 10px;
+  
+  .home_class_headers{
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+    
+    span{
+      font-size: 25px;
+      color: #0b2b75;
+      font-weight: bold;
+      margin-bottom: 14px;
+      display: inline-block;
+      border-bottom: 1px solid;
+    }
+  }
+  
+  .credit{font-weight:bold;color: green !important;}
+  .debit{font-weight:bold;color: red !important;}
+  
+  .appointment_show {
+    float: left;
+    height: 50vh;
+    background: #f1f1f1;
+    padding-top: 7vh;
+    overflow-y: auto;
+  }
+  
+  .appointment_view_header{
+    float: left;
+    width: 100%;
+    background: #7189ce;
+    font-size: 0;
+    margin-bottom: 3px;
+    
+    .header{
+      width: 16%;
+      display: inline-block;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      border-right: 1px solid white;
+    }
+    
+    .header:last-child{
+      border-right: 0;
+    }
+  }
+  
+  .appointment_view_contents{
+    float: left;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 3px;
+    background: white;
+    font-size: 0;
+    
+    .content{
+      width: 16%;
+      display: inline-block;
+      text-align: center;
+      font-size: 14px;
+      color: gray;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      border-right: 1px solid #eaeaea;
+    }
+    
+    .content:first-child{
+      color: #49c0cc;
+    }
+    
+    .content:last-child{
+      border-right: 0;
+    }
+  }
+}

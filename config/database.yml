@@ -1,0 +1,27 @@
+development:
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  host: localhost
+  username: postgres
+  database: banking_system_db
+  password: postgres9
+
+  
+production:
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  host: localhost
+  username: postgres
+  database: banking_system_db
+  password: postgres9
+
+test:
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  host: localhost
+  username: postgres
+  database: test_banking_db
+  password: postgres9
